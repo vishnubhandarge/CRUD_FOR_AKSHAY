@@ -1,6 +1,7 @@
-
+﻿
 using CRUD_FOR_AKSHAY.Data;
 using Microsoft.EntityFrameworkCore;
+using CRUD_FOR_AKSHAY.Controllers;
 
 namespace CRUD_FOR_AKSHAY
 {
@@ -36,6 +37,8 @@ namespace CRUD_FOR_AKSHAY
             app.UseAuthorization();
 
             app.MapControllers();
+
+           //app.MapStudentEndpoints();
 
             app.Run();
         }

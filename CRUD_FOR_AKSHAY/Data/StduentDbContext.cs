@@ -1,5 +1,6 @@
 ﻿using CRUD_FOR_AKSHAY.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace CRUD_FOR_AKSHAY.Data
 {
@@ -10,5 +11,10 @@ namespace CRUD_FOR_AKSHAY.Data
 
         }
         public DbSet<Student> Students { get; set; }
+
+        internal void SaveChanges(EntityEntry<Student> createdStudent)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
