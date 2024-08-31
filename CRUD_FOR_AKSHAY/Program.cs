@@ -37,9 +37,7 @@ namespace CRUD_FOR_AKSHAY
             app.UseAuthorization();
 
             app.MapControllers();
-
-           //app.MapStudentEndpoints();
-
+            //just comment
             app.Run();
         }
     }
