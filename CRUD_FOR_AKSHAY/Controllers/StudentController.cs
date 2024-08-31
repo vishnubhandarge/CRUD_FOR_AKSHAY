@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CRUD_FOR_AKSHAY.Controllers
 {
     [Route("api/[controller]")]
+    //7200/Student/
     [ApiController]
     public class StudentController : ControllerBase
     {
@@ -14,7 +15,7 @@ namespace CRUD_FOR_AKSHAY.Controllers
         {
             this.dbContext = dbContext;
         }
-
+        //7200/Student/GetAllStudents
         [HttpGet]
         public IActionResult GetAllStudents()
         {
@@ -22,18 +23,20 @@ namespace CRUD_FOR_AKSHAY.Controllers
             return Ok(students);
         }
         [HttpPost]
+        //7200/Student/AddNewStudent
+
         public IActionResult AddNewStudent(CreateStudentDTO student)
         {
 
-                //If student is not valid return Bad request
-                var employeeEntity = new Student()
-                {
-                    FullName = student.FullName,
-                    Standard = student.Standard,
-                };
-                dbContext.Students.Add(employeeEntity);
-                dbContext.SaveChanges();
-                return Ok();
+            //If student is not valid return Bad request
+            var employeeEntity = new Student()
+            {
+                FullName = student.FullName,
+                Standard = student.Standard,
+            };
+            dbContext.Students.Add(employeeEntity);
+            dbContext.SaveChanges();
+            return Ok();
         }
 
         [HttpGet]
@@ -62,6 +65,6 @@ namespace CRUD_FOR_AKSHAY.Controllers
             dbContext.SaveChanges();
             return Ok("Student Deleted");
         }
-        
+        //Hello
     }
 }
